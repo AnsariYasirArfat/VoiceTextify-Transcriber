@@ -44,12 +44,21 @@ function App() {
         <div className="w-[500px] h-[100px] border p-4 rounded-lg shadow-md mb-4">
           <p className="text-gray-700 capitalize">{text}</p>
         </div>
+        <div>
+          {isListening ? (
+            <p className="mb-2 text-gray-500 animate-pulse">
+              {!text ? "Waiting..." : "Speaking Now"}
+            </p>
+          ) : (
+            <p className="mb-2 text-gray-500 ">Not Listening</p>
+          )}
+        </div>
         <div className="flex space-x-4">
           {isListening ? (
             <button
               className={`${
                 showStopButton
-                  ? "bg-red-500 px-4 py-2 text-white rounded-lg"
+                  ? "bg-red-500 px-4 py-2 text-white rounded-lg "
                   : "hidden"
               }`}
               onClick={stopListening}
@@ -58,7 +67,7 @@ function App() {
             </button>
           ) : (
             <button
-              className="px-4 py-2 bg-green-500 text-white rounded-lg"
+              className="px-4 py-2 bg-green-500 text-white rounded-lg "
               onClick={startListening}
             >
               Start Listening

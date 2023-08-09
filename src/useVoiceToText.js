@@ -7,6 +7,7 @@ if (window.webkitSpeechRecognition) {
   speech = new SpeechRecognition();
   speech.continuous = true;
   speech.interimResults = true; // Enable interim results
+  speech.lang = "en-US";
 } else {
   speech = null;
 }
